@@ -29,7 +29,7 @@ def store(request):
     air.arrival_date_time = request.POST.get('arrival_date_time')
     air.save()
     messages.success(request,"New Travelling data Added Successfully")
-    return redirect('/pages/base')
+    return redirect('/portal/pages/base')
 
 def updateViewtravel(request,pk):
     air = Traveller.objects.get(id = pk)

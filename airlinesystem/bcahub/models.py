@@ -5,7 +5,7 @@ class Traveller(models.Model):
     flight = models.CharField(max_length=20, blank=False)
     timeFrame = models.CharField(max_length=20, blank=False)
     name = models.CharField(max_length=20, blank=False)
-    dob = models.IntegerField(10)
+    dob = models.CharField(max_length=20)
     nrc = models.CharField(max_length=50, blank=False)
     gender = models.CharField(max_length=6, blank=False)
     depature_port = models.CharField(max_length=10, blank=False)
@@ -30,7 +30,7 @@ class Airline(models.Model):
 class Riskaction(models.Model):
     number = models.IntegerField(5)
     name = models.CharField(max_length=20, blank=False)
-    dob = models.IntegerField(10)
+    dob = models.CharField(max_length=20)
     father = models.CharField(max_length=20, blank=False)
     passport = models.IntegerField(10)
     gender = models.CharField(max_length=10, blank=False)
@@ -49,7 +49,7 @@ class Crew(models.Model):
 class Journeysearch(models.Model):
     number= models.IntegerField(5)
     name = models.CharField(max_length=20, blank=False)
-    dob = models.IntegerField(10)
+    dob = models.CharField(max_length=20)
     father = models.CharField(max_length=20, blank=False)
     passport = models.IntegerField(10)
     gender = models.CharField(max_length=10, blank=False)
