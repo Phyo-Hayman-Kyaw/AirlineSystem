@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        
+
         <nav>
             <ul>
                 <a href="{% url 'base' %}">
@@ -36,19 +36,19 @@
         </nav>
     </div>
     {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <div class="first" role="alert">{{ message }}</div>
-            {% endfor %}
-        </ul>
-        {% endif %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="first" role="alert">{{ message }}</div>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     <div class="travellersection">
         <h1>Welcome From Myanmar Airline</h1>
         <table>
             <h2>Travellar Table</h2>
             <thead>
-            
+
                 <th style="border-top-left-radius: 10px;">Flight</th>
                 <th>TimeFrame</th>
                 <th>Name</th>
@@ -59,73 +59,61 @@
                 <th>Depature Date and Time</th>
                 <th>Arrival Port</th>
                 <th style="border-top-right-radius: 10px;">Arrival Date and Time</th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                <th style="border-top-right-radius:10px; width: 10%;" >Action </th>
-                
-            
-              
+                <th style="border-top-right-radius:10px; width: 10%;">Action </th>
+                <th style="border-top-right-radius:10px; width: 10%;">Action </th>
+
+
+
             </thead>
-            
+
             <tbody class="tbody1">
-               
+
                 {% for bcahub in data%}
-                    <tr>
-                        <td class="h">
+                <tr>
+                    <td class="h">
                         {{ bcahub.flight}}
                     </td>
-                        <td class="h">
-                            {{ bcahub.timeFrame}}
-                        </td>
-                        <td class="o">
-                            {{ bcahub.name}}
-                        </td>
-                        <td class="t">
-                            {{ bcahub.dob}}
-                        </td>
-                        <td class="p">
-                            {{ bcahub.nrc}}
-                        </td>
-                        <td>
-                            {{ bcahub.gender}}
-                        </td>
-                        <td>
-                            {{ bcahub.depature_port}}
-                        </td>
-                        <td>
-                            {{ bcahub.depature_date_time}}
-                        </td>
-                        <td>
-                            {{ bcahub.arrival_port}}
-                        </td>
-                        <td>
-                            {{ bcahub.arrival_date_time}}
-                        </td>
-                        <td class ="action">          
-                     
-                        
-                            <span class="fa fa-pen text-white">
-                                <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none"></a>
-                            </span>
-                                
-                        
-        
-                       
-                       
-                            <span class="fa-solid fa-folder-plus">
-                                <a href="{% url 'createtravel' %}"  class="text-decoration-none"> </a>
-                            </apan>
-                
-                         
-                       
-                       
-                        </td>
-                      
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                       
+                    <td class="h">
+                        {{ bcahub.timeFrame}}
+                    </td>
+                    <td class="o">
+                        {{ bcahub.name}}
+                    </td>
+                    <td class="t">
+                        {{ bcahub.dob}}
+                    </td>
+                    <td class="p">
+                        {{ bcahub.nrc}}
+                    </td>
+                    <td>
+                        {{ bcahub.gender}}
+                    </td>
+                    <td>
+                        {{ bcahub.depature_port}}
+                    </td>
+                    <td>
+                        {{ bcahub.depature_date_time}}
+                    </td>
+                    <td>
+                        {{ bcahub.arrival_port}}
+                    </td>
+                    <td>
+                        {{ bcahub.arrival_date_time}}
+                    </td>
+                    <td class="action">
+                        <a href="{% url 'updateViewtravel' bcahub.id %}" class="text-decoration-none"><span
+                                class="fa fa-pen text-white"></span></span></a>
+
+                        <a href="{% url 'createtravel' %}" class="text-decoration-none"><span
+                                class="fa-solid fa-folder-plus"></span></a>
+                    </td>
+
                 </tr>
-<!--            
+                {% endfor %}
+            </tbody>
+
+            </tr>
+            <!--            
             <tbody class="tbody2">
                 <td>Myanmar Air line</td>
                 <td>16:00</td>
@@ -263,18 +251,18 @@
                 <td>4 Am</td>
                 <td style="border-bottom-right-radius: 10px;">20.10.23 4A.M</td>
             </tbody> -->
-         
-       
-                
-            
-            
-            
-            
-    
-              
+
+
+
+
+
+
+
+
+
         </table>
-    
-     
+
+
     </div>
 
 </body>
